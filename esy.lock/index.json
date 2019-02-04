@@ -1,5 +1,5 @@
 {
-  "checksum": "172de2e0481d422d5d08539ac434ba67",
+  "checksum": "a5f48feef7c01c0305be78c109ef9f3a",
   "root": "revery@link:./package.json",
   "node": {
     "revery@link:./package.json": {
@@ -9,7 +9,7 @@
       "source": { "type": "link", "path": ".", "manifest": "package.json" },
       "overrides": [],
       "dependencies": [
-        "reason-glfw@3.2.1013@d41d8cd9",
+        "reason-glfw@link:../reason-glfw",
         "reason-gl-matrix@0.9.9302@d41d8cd9",
         "reason-fontkit@2.0.6@d41d8cd9", "ocaml@4.7.1003@d41d8cd9",
         "flex@1.2.2@d41d8cd9", "@opam/lwt_ppx@opam:1.2.1@db1172a7",
@@ -66,16 +66,11 @@
       ],
       "devDependencies": []
     },
-    "reason-glfw@3.2.1013@d41d8cd9": {
-      "id": "reason-glfw@3.2.1013@d41d8cd9",
+    "reason-glfw@link:../reason-glfw": {
+      "id": "reason-glfw@link:../reason-glfw",
       "name": "reason-glfw",
-      "version": "3.2.1013",
-      "source": {
-        "type": "install",
-        "source": [
-          "archive:https://registry.npmjs.org/reason-glfw/-/reason-glfw-3.2.1013.tgz#sha1:042b0bdcde972a558c28bcfcefad0a2b1facd062"
-        ]
-      },
+      "version": "link:../reason-glfw",
+      "source": { "type": "link", "path": "../reason-glfw" },
       "overrides": [],
       "dependencies": [
         "refmterr@3.1.10@d41d8cd9", "reason-gl-matrix@0.9.9302@d41d8cd9",
@@ -120,7 +115,7 @@
       },
       "overrides": [],
       "dependencies": [
-        "refmterr@3.1.10@d41d8cd9", "reason-glfw@3.2.1013@d41d8cd9",
+        "refmterr@3.1.10@d41d8cd9", "reason-glfw@link:../reason-glfw",
         "reason-gl-matrix@0.9.9302@d41d8cd9",
         "esy-harfbuzz@1.9.1005@d41d8cd9", "esy-freetype2@2.9.1006@d41d8cd9",
         "esy-cmake@0.3.5@d41d8cd9", "@opam/dune@opam:1.6.3@a7d7baed",
@@ -245,20 +240,20 @@
         "@opam/base-bytes@opam:base@19d0c2ff"
       ]
     },
-    "@opam/yojson@opam:1.5.0@890db858": {
-      "id": "@opam/yojson@opam:1.5.0@890db858",
+    "@opam/yojson@opam:1.6.0@f7ec7c12": {
+      "id": "@opam/yojson@opam:1.6.0@f7ec7c12",
       "name": "@opam/yojson",
-      "version": "opam:1.5.0",
+      "version": "opam:1.6.0",
       "source": {
         "type": "install",
         "source": [
-          "archive:https://opam.ocaml.org/cache/md5/d8/d80de1bacdde292af42f7c78b323da7b#md5:d80de1bacdde292af42f7c78b323da7b",
-          "archive:https://github.com/ocaml-community/yojson/releases/download/1.5.0/yojson-1.5.0.tbz#md5:d80de1bacdde292af42f7c78b323da7b"
+          "archive:https://opam.ocaml.org/cache/md5/8c/8ca16557d3068253cc375452af3bde96#md5:8ca16557d3068253cc375452af3bde96",
+          "archive:https://github.com/ocaml-community/yojson/releases/download/1.6.0/yojson-1.6.0.tbz#md5:8ca16557d3068253cc375452af3bde96"
         ],
         "opam": {
           "name": "yojson",
-          "version": "1.5.0",
-          "path": "esy.lock/opam/yojson.1.5.0"
+          "version": "1.6.0",
+          "path": "esy.lock/opam/yojson.1.6.0"
         }
       },
       "overrides": [],
@@ -708,12 +703,12 @@
       },
       "overrides": [],
       "dependencies": [
-        "ocaml@4.7.1003@d41d8cd9", "@opam/yojson@opam:1.5.0@890db858",
+        "ocaml@4.7.1003@d41d8cd9", "@opam/yojson@opam:1.6.0@f7ec7c12",
         "@opam/ocamlfind@opam:1.8.0@96572762",
         "@opam/dune@opam:1.6.3@a7d7baed", "@esy-ocaml/substs@0.0.1@d41d8cd9"
       ],
       "devDependencies": [
-        "ocaml@4.7.1003@d41d8cd9", "@opam/yojson@opam:1.5.0@890db858",
+        "ocaml@4.7.1003@d41d8cd9", "@opam/yojson@opam:1.6.0@f7ec7c12",
         "@opam/ocamlfind@opam:1.8.0@96572762"
       ]
     },
@@ -1003,14 +998,14 @@
       },
       "overrides": [],
       "dependencies": [
-        "ocaml@4.7.1003@d41d8cd9", "@opam/yojson@opam:1.5.0@890db858",
+        "ocaml@4.7.1003@d41d8cd9", "@opam/yojson@opam:1.6.0@f7ec7c12",
         "@opam/ocamlfind@opam:1.8.0@96572762",
         "@opam/dune@opam:1.6.3@a7d7baed", "@opam/cppo@opam:1.6.5@bec3dbd9",
         "@opam/cmdliner@opam:1.0.2@b29b7491",
         "@esy-ocaml/substs@0.0.1@d41d8cd9"
       ],
       "devDependencies": [
-        "ocaml@4.7.1003@d41d8cd9", "@opam/yojson@opam:1.5.0@890db858",
+        "ocaml@4.7.1003@d41d8cd9", "@opam/yojson@opam:1.6.0@f7ec7c12",
         "@opam/cppo@opam:1.6.5@bec3dbd9",
         "@opam/cmdliner@opam:1.0.2@b29b7491"
       ]

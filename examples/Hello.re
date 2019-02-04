@@ -41,11 +41,12 @@ module Logo = {
 
       <View onMouseDown onMouseUp>
         <Image
-          src="outrun-logo.png"
+          src="bg-gradient-circle.png"
           style=Style.[
             width(512),
             height(256),
             opacity(logoOpacity),
+            backgroundColor(Color.rgba(0., 200., 0., 0.)),
             transform([
               Transform.RotateY(Angle.from_radians(rotationY)),
               Transform.RotateX(Angle.from_radians(rotation)),

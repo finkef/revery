@@ -8,8 +8,9 @@ module ScrollViewExample = ScrollView;
 open Revery.UI;
 open Revery.UI.Components;
 
-let bgColor = Color.hex("#212733");
-let activeBackgroundColor = Color.hex("#2E3440");
+let bgColor = Color.rgba(0., 0., 0., 0.);
+/* let activeBackgroundColor = Color.rgba("#2E3440"); */
+let activeBackgroundColor = bgColor;
 let inactiveBackgroundColor = Color.hex("#272d39");
 let selectionHighlight = Color.hex("#90f7ff");
 
@@ -108,7 +109,12 @@ let init = app => {
     App.createWindow(
       app,
       "Welcome to Revery!",
-      ~createOptions={...Window.defaultCreateOptions, maximized},
+      ~createOptions={
+        ...Window.defaultCreateOptions,
+        maximized,
+        transparent: true,
+        backgroundColor: Color.rgba(0., 0., 0., 0.),
+      },
     );
 
   let render = () => {

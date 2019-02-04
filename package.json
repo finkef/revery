@@ -3,7 +3,9 @@
   "version": "0.5.1",
   "description": "App toolkit built with Reason",
   "license": "MIT",
-  "bugs": { "url": "https://github.com/bryphe/revery/issues" },
+  "bugs": {
+    "url": "https://github.com/bryphe/revery/issues"
+  },
   "scripts": {
     "build": "esy b",
     "build:release": "esy b dune build --profile=release --root . -j4",
@@ -15,7 +17,9 @@
   },
   "homepage": "https://github.com/bryphe/revery#readme",
   "esy": {
-    "build": [ "dune build --root . -j4" ],
+    "build": [
+      "dune build --root . -j4"
+    ],
     "install": [
       "esy-installer Revery.install",
       "esy-installer Revery_Core.install",
@@ -30,7 +34,7 @@
   },
   "dependencies": {
     "@esy-ocaml/reason": "3.4.0",
-    "reason-glfw": "^3.2.1013",
+    "reason-glfw": "*",
     "reason-fontkit": "^2.0.6",
     "reason-gl-matrix": "^0.9.9302",
     "@opam/color": "^0.2.0",
@@ -46,7 +50,8 @@
     "@opam/cmdliner": "1.0.2",
     "@opam/js_of_ocaml": "github:ocsigen/js_of_ocaml:js_of_ocaml.opam#db257ce",
     "@opam/js_of_ocaml-compiler": "github:ocsigen/js_of_ocaml:js_of_ocaml-compiler.opam#db257ce",
-    "@brisk/brisk-reconciler": "github:briskml/brisk-reconciler#7901934"
+    "@brisk/brisk-reconciler": "github:briskml/brisk-reconciler#7901934",
+    "reason-glfw": "link:../reason-glfw"
   },
   "peerDependencies": {
     "ocaml": "^4.7.0"
