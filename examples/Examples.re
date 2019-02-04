@@ -111,6 +111,8 @@ let init = app => {
       "Welcome to Revery!",
       ~createOptions={
         ...Window.defaultCreateOptions,
+        width: 1920,
+        height: 1080,
         maximized,
         transparent: true,
         backgroundColor: Color.rgba(0., 0., 0., 0.),
@@ -118,68 +120,86 @@ let init = app => {
     );
 
   let render = () => {
-    let s = App.getState(app);
+    /* let s = App.getState(app); */
+    /* let renderButton = (x: example) => {
+         let isActive = String.equal(x.name, s.selectedExample);
+         <ExampleButton
+           isActive
+           name={x.name}
+           onClick={_ => {
+             /*
+              * TEMPORARY WORKAROUND: The animations don't always get stopped when switching examples,
+              * tracked by briskml/brisk-reconciler#8. We can remove this once it's fixed!
+              */
+             Animated.cancelAll();
 
-    let renderButton = (x: example) => {
-      let isActive = String.equal(x.name, s.selectedExample);
-      <ExampleButton
-        isActive
-        name={x.name}
-        onClick={_ => {
-          /*
-           * TEMPORARY WORKAROUND: The animations don't always get stopped when switching examples,
-           * tracked by briskml/brisk-reconciler#8. We can remove this once it's fixed!
-           */
-          Animated.cancelAll();
-
-          App.dispatch(app, SelectExample(x.name));
-        }}
-      />;
-    };
-
-    let buttons = List.map(renderButton, s.examples);
-
-    let exampleRender = getRenderFunctionSelector(s);
-    let example = exampleRender(win);
-
+             App.dispatch(app, SelectExample(x.name));
+           }}
+         />;
+       }; */
+    /* let buttons = List.map(renderButton, s.examples); */
+    /* let exampleRender = getRenderFunctionSelector(s); */
+    /* let example = exampleRender(win); */
     <View
-      onMouseWheel={evt =>
-        print_endline("onMouseWheel: " ++ string_of_float(evt.deltaY))
-      }
       style=Style.[
         position(`Absolute),
-        justifyContent(`Center),
-        alignItems(`Center),
-        backgroundColor(bgColor),
-        bottom(0),
         top(0),
         left(0),
         right(0),
-        flexDirection(`Row),
+        bottom(0),
+        justifyContent(`Center),
       ]>
-      <ScrollView
-        style=Style.[
-          position(`Absolute),
-          top(0),
-          left(0),
-          width(175),
-          bottom(0),
-          backgroundColor(bgColor),
-        ]>
-        <View> ...buttons </View>
-      </ScrollView>
-      <View
-        style=Style.[
-          position(`Absolute),
-          top(0),
-          left(175),
-          right(0),
-          bottom(0),
-          backgroundColor(activeBackgroundColor),
-        ]>
-        example
-      </View>
-    </View>;
+
+        <Image
+          src="bg-gradient-circle.png"
+          style=Style.[
+            position(`Absolute),
+            top(0),
+            left(0),
+            width(1920),
+            height(1080),
+          ]
+        />
+        <SourceSlider window=win />
+      </View>;
+      /* <View
+           onMouseWheel={evt =>
+             print_endline("onMouseWheel: " ++ string_of_float(evt.deltaY))
+           }
+           style=Style.[
+             position(`Absolute),
+             justifyContent(`Center),
+             alignItems(`Center),
+             backgroundColor(bgColor),
+             bottom(0),
+             top(0),
+             left(0),
+             right(0),
+             flexDirection(`Row),
+           ]>
+           <ScrollView
+             style=Style.[
+               position(`Absolute),
+               top(0),
+               left(0),
+               width(175),
+               bottom(0),
+               backgroundColor(bgColor),
+             ]>
+             <View> ...buttons </View>
+           </ScrollView>
+           <View
+             style=Style.[
+               position(`Absolute),
+               top(0),
+               left(175),
+               right(0),
+               bottom(0),
+               backgroundColor(activeBackgroundColor),
+             ]>
+             example
+           </View>
+         </View>; */
   };
 
   if (Environment.webGL) {
